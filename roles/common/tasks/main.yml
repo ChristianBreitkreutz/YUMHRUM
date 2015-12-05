@@ -1,0 +1,12 @@
+- name: install commons
+  yum:
+    name={{ item }}
+  with_items:
+    - tree
+    - gimp
+    - epel-release
+    - python-pip
+
+- name: install httplib2
+  pip:
+    name=httplib2

@@ -1,0 +1,16 @@
+---
+
+- hosts: remote
+  remote_user: root
+  roles:
+    - common
+    - git
+
+  vars_prompt:
+    - name: "gitHubUserName"
+      prompt: "enter git hub user"
+      private: no
+
+    - name: "gitHubPassword"
+      prompt: "enter git hub password"
+      private: yes

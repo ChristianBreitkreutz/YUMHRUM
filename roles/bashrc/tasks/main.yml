@@ -1,0 +1,15 @@
+# prepare and set default for user and root
+- include: bashrcSetUp.yml UserHome="{{ ansible_env['HOME'] }}"
+- include: bashrcSetUp.yml UserHome="/root"
+  sudo: yes
+
+- name: put root only settings
+  template:
+    src=root.sh.j2 
+    dest=/root/.bashloader.d/root.sh
+    mode=0644
+  sudo: yes
+
+- name: load new .bashrc
+  shell: "source $HOME/.bashrc"
+  changed_when: false
