@@ -3,7 +3,6 @@
     name={{ item }}
   with_items:
     - tree
-    - gimp
     - epel-release
     - python-pip
 

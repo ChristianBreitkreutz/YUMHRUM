@@ -5,6 +5,8 @@
   roles:
     - common
     - git
+    - iptables
+    - docker
 
   vars_prompt:
     - name: "gitHubUserName"
