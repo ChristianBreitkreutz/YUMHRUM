@@ -1,0 +1,9 @@
+- name: Clone ESF repo to ~/esf
+  git:
+    repo: git@github.com:ePages-de/esf.git
+    dest: ~/esf
+    update: yes
+    accept_hostkey: true
+
+#- name: Gradle distribution
+#  command: ~/esf/gradlew dist -p ~/esf/

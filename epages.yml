@@ -1,0 +1,10 @@
+---
+
+- hosts: local
+  remote_user: vlad-vm
+  sudo: yes
+  roles:
+    - common
+    - esf
+    - docker
+    - centos

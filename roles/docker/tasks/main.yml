@@ -1,7 +1,11 @@
-- name: install Docker
-  yum:
-    name=docker-io
-    
-- service:
-    name=docker
-    state=started 
+- name: enable docker repo
+  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-wily main' state=present
+
+- name: install docker
+  apt: name=docker-engine
+
+- name: build esf image
+  docker_image:
+    path=/home/vlad-vm/esf
+    name=esf
+    state=present

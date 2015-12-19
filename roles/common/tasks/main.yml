@@ -1,11 +1,11 @@
 - name: install commons
-  yum:
+  apt:
     name={{ item }}
   with_items:
     - tree
-    - epel-release
     - python-pip
+    - openjdk-8-jdk
 
-- name: install httplib2
+- name: install docker-py
   pip:
-    name=httplib2
+    name=docker-py

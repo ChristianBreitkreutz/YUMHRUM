@@ -1,12 +1,17 @@
 ---
 
-- hosts: remote
-  remote_user: root
+- hosts: local
+  remote_user: vlad-vm
+  roles:
+   - docker
+
+- hosts: centos
+  remote_user: centos
+  sudo: yes
   roles:
     - common
     - git
     - iptables
-    - docker
 
   vars_prompt:
     - name: "gitHubUserName"
