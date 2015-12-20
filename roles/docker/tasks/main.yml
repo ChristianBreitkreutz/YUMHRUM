@@ -6,6 +6,21 @@
 
 - name: build esf image
   docker_image:
-    path=/home/vlad-vm/esf
+    path=~/esf
     name=esf
     state=present
+
+- name: build cenots image
+  docker_image:
+    path=centos
+    name=epages_centos
+    state=present
+
+- name: run centos container
+  docker:
+    name: centos
+    image: epages_centos
+    state: started
+    ports:
+    - "8080:80"
+    - "2222:22"
