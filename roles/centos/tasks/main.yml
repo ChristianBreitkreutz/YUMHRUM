@@ -1,0 +1,2 @@
+- name: Echo
+  command: echo HI

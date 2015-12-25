@@ -8,7 +8,8 @@ It will install ansible.
  - `sudo apt-get update`
  - `sudo apt-get install ansible`
 
-## Trigger install.
- - `ansible-playbook -i inventory.ini rush.yml`
-  - `enter github account`
-  - `enter github password`
+## Install ESF + Docker + Centos.
+ - `ansible-playbook -i epinventory.ini epages.yml --ask-sudo-pass`
+
+## Install ePages on Centos.
+ - `ansible-playbook -i inventory.ini centos.yml`

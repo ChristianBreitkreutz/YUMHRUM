@@ -1,22 +1,18 @@
-# install git
-- name: install git
-  yum:
-    name=git
 
 # connect git to github
 - name: create ssh folder
   file: path=~/.ssh state=directory
 
-- stat: path=~/.ssh/github_ansible_generated
+- stat: path=~/.ssh/id_rsa
   register: sshkey
   changed_when: false
 
 - name: Creating pub SSH keys - skip if it's already exist
-  command: "ssh-keygen -N '' -f ~/.ssh/github_ansible_generated"
+  command: "ssh-keygen -t rsa -N '' -b 4096 -f ~/.ssh/id_rsa"
   when: not sshkey.stat.exists
 
 - name: copy public key
-  command: "cat ~/.ssh/github_ansible_generated.pub"
+  command: "cat ~/.ssh/id_rsa.pub"
   register: publickey
   changed_when: false
 
@@ -30,3 +26,28 @@
     force_basic_auth: yes
     body_format: json
     status_code: 201, 422 #201 - set key, 422 - key is already in use
+
+- name: Pull epages infra
+  git: 
+    repo=ssh://git@github.com/ePages-de/epages-infra.git 
+    dest=/root/epages-infra
+    accept_hostkey=yes
+
+- name: Pull 3rdPartyTools
+  git: 
+    repo=ssh://git@github.com/ePages-de/3rdPartyTools.git 
+    dest=/root/3rdPartyTools
+    update=no
+    accept_hostkey=yes
+
+- name: Pull epagesj
+  git: 
+    repo=ssh://git@github.com/ePages-de/epagesj.git 
+    dest=/root/epagesj
+    accept_hostkey=yes
+
+- name: chmod to /root/3rdPartyTools/Scripts/infrastructure/*
+  file: path=/root/3rdPartyTools/Scripts/infrastructure/
+    state=directory
+    mode=0611
+    recurse=yes

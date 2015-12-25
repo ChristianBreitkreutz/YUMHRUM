@@ -1,7 +1,8 @@
-FROM centos:centos6
+FROM centos:6.7
 MAINTAINER Feng Honglin <hfeng@tutum.co>
 
 RUN yum -y install openssh-server epel-release && \
+    yum -y install git-all && \
     yum -y install pwgen && \
     rm -f /etc/ssh/ssh_host_dsa_key /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key && \
@@ -16,5 +17,5 @@ RUN chmod +x /*.sh
 ENV AUTHORIZED_KEYS **None**
 
 EXPOSE 22
-CMD ["/run.sh"]
 CMD ["/bin/bash"]
+CMD ["/run.sh"]

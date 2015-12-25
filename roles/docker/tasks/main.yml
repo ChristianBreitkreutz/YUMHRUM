@@ -10,7 +10,7 @@
     name=esf
     state=present
 
-- name: build cenots image
+- name: build centos image
   docker_image:
     path=centos
     name=epages_centos
@@ -20,6 +20,7 @@
   docker:
     name: centos
     image: epages_centos
+    tty: yes
     state: started
     ports:
     - "8080:80"
