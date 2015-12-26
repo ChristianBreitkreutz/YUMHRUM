@@ -1,7 +1,5 @@
-#Install Ansible on Ubuntu
+#Install Ansible on CentOS
 #!/bin/sh
 
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
+yum install epel-release.noarch
+yum install ansible

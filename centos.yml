@@ -1,0 +1,16 @@
+---
+
+- hosts: centos
+  remote_user: root
+  roles:
+    - common
+    - centos_git
+#   - centos_iptables
+
+#  vars_prompt:
+#    - name: "gitHubUserName"
+#    - prompt: "Enter GitHub User Name"
+#    - private: no
+#    - name: "gitHubPassword"
+#      prompt: "Enter GitHub Password"
+#      private: yes

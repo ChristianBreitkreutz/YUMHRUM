@@ -1,27 +1,7 @@
-- name: enable docker repo
-  apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-wily main' state=present
+- name: Install docker-io
+  yum:
+    name=docker-io
 
-- name: install docker
-  apt: name=docker-engine
-
-- name: build esf image
-  docker_image:
-    path=~/esf
-    name=esf
-    state=present
-
-- name: build centos image
-  docker_image:
-    path=centos
-    name=epages_centos
-    state=present
-
-- name: run centos container
-  docker:
-    name: centos
-    image: epages_centos
-    tty: yes
-    state: started
-    ports:
-    - "8080:80"
-    - "2222:22"
+- name: install docker py
+  pip:
+    name=docker-py version=1.4.0
