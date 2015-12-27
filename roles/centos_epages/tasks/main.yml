@@ -1,0 +1,6 @@
+- name: Install which
+  yum:
+    name=which
+
+- name: Hello world
+  command: echo Hello world

@@ -31,6 +31,7 @@
   git: 
     repo=ssh://git@github.com/ePages-de/epages-infra.git 
     dest=/root/epages-infra
+    update=no
     accept_hostkey=yes
 
 - name: Pull 3rdPartyTools
@@ -44,6 +45,7 @@
   git: 
     repo=ssh://git@github.com/ePages-de/epagesj.git 
     dest=/root/epagesj
+    update=no
     accept_hostkey=yes
 
 - name: chmod to /root/3rdPartyTools/Scripts/infrastructure/*

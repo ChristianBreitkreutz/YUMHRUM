@@ -13,7 +13,7 @@ It will install ansible.
     - gitHubPassword: ***
 
 ## Install Docker with CentOS and ESF containers
- - `ansible-playbook -i inventory.ini site.yml
+ - `ansible-playbook -i inventory.ini site.yml`
 
 ## TODO: Install ePages on Centos.
  - `ansible-playbook -i centos.ini centos.yml`
