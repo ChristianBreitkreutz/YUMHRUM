@@ -5,7 +5,7 @@
   roles:
     - common
     - centos_git
-    - centos_epages
+#   - centos_epages
 #   - centos_iptables
 
 #  vars_prompt:

@@ -2,5 +2,5 @@
   yum:
     name=which
 
-- name: Hello world
-  command: echo Hello world
+- name: install ePages 6 latest
+  command: ~/epages-infra/scripts/epages/install_epages.sh -p

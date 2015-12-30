@@ -4,6 +4,6 @@
   remote_user: root
   roles:
     - common
-    - docker
-    - esf_docker
+   # - docker
+   # - esf_docker
     - centos_docker

@@ -10,10 +10,8 @@
 
 - name: run centos container
   docker:
-    name: centos
-    image: epages_centos
-    tty: yes
-    state: started
-    ports:
-    - "8080:80"
-    - "2222:22"
+    name=centos
+    image=epages_centos
+    tty=yes
+    state=started
+    ports="8081:8080,2222:22"
