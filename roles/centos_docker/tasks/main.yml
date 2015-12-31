@@ -14,4 +14,4 @@
     image=epages_centos
     tty=yes
     state=started
-    ports="8081:8080,2222:22"
+    ports="81:80,2222:22"

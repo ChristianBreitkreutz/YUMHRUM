@@ -17,6 +17,6 @@ RUN chmod +x /*.sh
 ENV AUTHORIZED_KEYS **None**
 
 EXPOSE 22
-EXPOSE 8080
+EXPOSE 80
 CMD ["/bin/bash"]
 CMD ["/run.sh"]
