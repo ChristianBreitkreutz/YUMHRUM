@@ -1,0 +1,16 @@
+- name: chmod for 3rdPartyTools
+    command: chmod -R 777 /root/3rdPartyTools/
+
+- name: build jenkins image
+  docker_image:
+    path=docker/jenkins
+    name=epages_jenkins
+    state=present
+
+- name: run jenkins container
+  docker:
+    name=jenkins
+    image=epages_jenkins
+    state=started
+    ports="8080:8080,50000:50000"
+    volumes="/root/3rdPartyTools:/home/3rdPartyTools"

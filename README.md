@@ -18,3 +18,5 @@ It will install ansible.
 ## TODO: Install ePages on Centos.
  - `ansible-playbook -i centos.ini centos.yml`
 
+## Run Jenkins container
+ - `ansible-playbook -i inventiry.ini jenkins.yml`
