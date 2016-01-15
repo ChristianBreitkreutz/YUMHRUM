@@ -4,6 +4,7 @@ MAINTAINER Feng Honglin <hfeng@tutum.co>
 RUN yum -y install openssh-server epel-release && \
     yum -y install git-all && \
     yum -y install pwgen && \
+    yum -y install which && \
     rm -f /etc/ssh/ssh_host_dsa_key /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
@@ -18,5 +19,7 @@ ENV AUTHORIZED_KEYS **None**
 
 EXPOSE 22
 EXPOSE 80
+EXPOSE 443
+EXPOSE 8088
 CMD ["/bin/bash"]
 CMD ["/run.sh"]
