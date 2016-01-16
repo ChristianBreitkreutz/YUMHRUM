@@ -9,6 +9,3 @@
 - name: install httplib2
   pip:
     name=httplib2
-
-- name: Update known_hosts
-  command=ssh-keygen -R [localhost]:2222
