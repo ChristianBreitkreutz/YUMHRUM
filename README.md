@@ -11,6 +11,7 @@ It will install ansible.
     - ansible_ssh_pass: ***
     - gitHubUserName: ***
     - gitHubPassword: ***
+    - ip address: ***
 
 ## Install Docker with CentOS and ESF containers
  - `ansible-playbook -i inventory.ini site.yml`

@@ -34,12 +34,12 @@
     update=no
     accept_hostkey=yes
 
-- name: Pull 3rdPartyTools
-  git: 
-    repo=ssh://git@github.com/ePages-de/3rdPartyTools.git 
-    dest=/root/3rdPartyTools
-    update=no
-    accept_hostkey=yes
+#- name: Pull 3rdPartyTools
+#  git: 
+#    repo=ssh://git@github.com/ePages-de/3rdPartyTools.git 
+#    dest=/root/3rdPartyTools
+#    update=no
+#    accept_hostkey=yes
 
 - name: Pull epagesj
   git: 

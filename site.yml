@@ -5,6 +5,7 @@
   roles:
     - common
     - keygen
+    - git
    # - docker
    # - esf_docker
     - centos_docker
