@@ -1,5 +1,5 @@
-- name: install ePages 6 latest
-  command: ~/epages-infra/scripts/epages/install_epages.sh -p
+#- name: install ePages 6 latest
+#  command: ~/epages-infra/scripts/epages/install_epages.sh -p
 
 #- name: Git checkout Ansible branch
 #  command: cd 3rdPartyTools && git checkout ansible
@@ -8,4 +8,4 @@
   command: chmod 777 ~/3rdPartyTools/Scripts/infrastructure/epages_docker/start_epages.sh
 
 - name: Start ePages on Docker container
-  command: ~/3rdPartyTools/Scripts/infrastructure/epages_docker/start_epages.sh -i dockerHost
+  command: ~/3rdPartyTools/Scripts/infrastructure/epages_docker/start_epages.sh -i {{ dockerHost }}
