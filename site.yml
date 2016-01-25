@@ -6,6 +6,7 @@
     - common
     - keygen
     - git
+    - java
    # - docker
-   # - esf_docker
+    - esf_docker
     - centos_docker
