@@ -6,8 +6,8 @@
     update: yes
     accept_hostkey: true
 
-- name: Gradle distribution
-  command: esf/gradlew dist -p esf/
+#- name: Gradle distribution
+#  command: esf/gradlew dist -p esf/
 
 - name: build esf image
   docker_image:
