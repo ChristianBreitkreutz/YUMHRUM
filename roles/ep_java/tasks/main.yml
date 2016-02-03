@@ -1,0 +1,10 @@
+- name: Install Java 8
+  become: yes
+  yum: name=java-1.8.0-openjdk-devel-1:1.8.0.71-1.b15.el6_7.x86_64
+
+- name: Set JAVA_HOME
+  shell: "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.71-1.b15.el6_7.x86_64/"
+
+- name: Set default Java version
+  become: yes
+  command: "alternatives --set java /usr/lib/jvm/jre-1.8.0-openjdk.x86_64/bin/java"

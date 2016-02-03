@@ -3,14 +3,6 @@
 - hosts: centos
   remote_user: root
   roles:
-    - common
-    - centos_git
-    - centos_epages
-
-#  vars_prompt:
-#    - name: "gitHubUserName"
-#    - prompt: "Enter GitHub User Name"
-#    - private: no
-#    - name: "gitHubPassword"
-#      prompt: "Enter GitHub Password"
-#      private: yes
+    - ep_common
+    - ep_git
+    - ep_java
