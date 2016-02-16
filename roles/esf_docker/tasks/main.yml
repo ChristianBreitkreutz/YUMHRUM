@@ -3,7 +3,7 @@
   git:
     repo: git@github.com:ePages-de/esf.git
     dest: esf
-    update: yes
+    update: no
     accept_hostkey: true
 
 - name: Gradle distribution
