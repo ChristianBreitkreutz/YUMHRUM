@@ -1,6 +1,3 @@
-#- name: chmod for 3rdPartyTools
-#    command: chmod -R 777 /home/vlad-vm/3rdPartyTools/
-
 - name: Build jenkins image
   become: yes
   docker_image:
@@ -15,8 +12,4 @@
     image=epages_jenkins
     state=started
     ports="8080:8080,50000:50000"
-    volumes="/home/vlad-vm/jenkins_jobs:/var/jenkins_home/jobs"
-
-#- name: Add DNS to resolf.conf
-#  become: yes
-#  command: cat nameserver 172.21.20.22 >> /etc/resolf.conf 
+    volumes="/root/jenkins_jobs:/var/jenkins_home/jobs"
