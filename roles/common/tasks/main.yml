@@ -4,6 +4,8 @@
 - name: install commons
   apt:
     name={{ item }}
+    state=present
+    force=yes
   with_items:
     - openssh-server
     - openjdk-8-jdk
@@ -18,3 +20,6 @@
 - name: install docker py
   pip:
     name=docker-py version=1.4.0
+
+- name: ca-certificates-java
+  command: /var/lib/dpkg/info/ca-certificates-java.postinst configure

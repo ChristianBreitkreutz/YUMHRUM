@@ -6,5 +6,5 @@
   roles:
     - common
     - keygen
-    - git
     - esf_docker
+
