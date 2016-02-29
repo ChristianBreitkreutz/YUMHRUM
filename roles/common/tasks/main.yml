@@ -4,6 +4,7 @@
 - name: Install commons
   apt:
     name={{ item }}
+    state=present
     force=yes
   with_items:
     - openssh-server
