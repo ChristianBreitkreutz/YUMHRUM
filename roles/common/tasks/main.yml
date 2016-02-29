@@ -1,9 +1,10 @@
 - name: Add Docker repository into source list
   apt_repository: repo='deb https://apt.dockerproject.org/repo ubuntu-wily main' state=present
 
-- name: install commons
+- name: Install commons
   apt:
     name={{ item }}
+    force=yes
   with_items:
     - openssh-server
     - openjdk-8-jdk
@@ -15,6 +16,9 @@
 - name: Install pip
   easy_install: name=pip
 
-- name: install docker py
+- name: Install docker py
   pip:
     name=docker-py version=1.4.0
+
+- name: Ca-certificates-java
+  shell: "/var/lib/dpkg/info/ca-certificates-java.postinst configure"

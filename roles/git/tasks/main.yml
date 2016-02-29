@@ -29,7 +29,7 @@
 
 - name: Pull 3rdPartyTools
   git: 
-    repo=git@github.com/ePages-de/3rdPartyTools.git 
-    dest=../3rdPartyTools
-    update=no
-    accept_hostkey=yes
+    repo: git@github.com:ePages-de/3rdPartyTools.git 
+    dest: ../3rdPartyTools
+    update: no
+    accept_hostkey: yes
