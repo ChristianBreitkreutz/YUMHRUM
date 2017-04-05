@@ -1,6 +1,8 @@
 - name: Install basic packages
   become: yes
-  yum: name={{ item }} state=latest
+  yum:
+    name: {{ item }}
+    state: latest
   with_items:
     - git
     - curl

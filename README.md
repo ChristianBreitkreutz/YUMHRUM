@@ -9,8 +9,8 @@
 ## Install commons and ESF container
  - `ansible-playbook -i inventory.ini site.yml`
 
-## TODO: Install ePages on Centos.
- - `ansible-playbook -i centos.ini centos.yml`
+## TODO: Install ePages on Ubuntu.
+ - `ansible-playbook -i inventory.ini ubuntu.yml`
 
 ## Run Jenkins container
  - `ansible-playbook -i inventory.ini jenkins.yml`

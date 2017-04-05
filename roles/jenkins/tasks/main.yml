@@ -1,15 +1,15 @@
 - name: Build jenkins image
   become: yes
   docker_image:
-    path=docker/jenkins
-    name=epages_jenkins
-    state=present
+    path: docker/jenkins
+    name: epages_jenkins
+    state: present
 
 - name: Run jenkins container
   become: yes
   docker:
-    name=jenkins
-    image=epages_jenkins
-    state=started
-    ports="8080:8080,50000:50000"
-    volumes="/root/jenkins_jobs:/var/jenkins_home/jobs"
+    name: jenkins
+    image: epages_jenkins
+    state: started
+    ports: "8080:8080,50000:50000"
+    volumes: "/root/jenkins_jobs:/var/jenkins_home/jobs"

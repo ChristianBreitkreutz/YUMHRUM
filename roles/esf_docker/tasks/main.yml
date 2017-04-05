@@ -11,6 +11,6 @@
 
 - name: build esf image
   docker_image:
-    path=esf
-    name=esf
-    state=present
+    path: esf
+    name: esf
+    state: present

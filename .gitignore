@@ -6,3 +6,5 @@ git.yml
 
 # Mac OS X specific file.
 .DS_Store
+*.retry
+*.project
